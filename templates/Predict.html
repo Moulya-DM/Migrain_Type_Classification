@@ -1,147 +1,238 @@
-<h1>Migraine Prediction Form</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Migraine Classification</title>
 
-<form method="POST">
+    <style>
 
-    {% csrf_token %}
+        body{
+            font-family: Arial;
+            background-image: url("https://cdn-icons-png.flaticon.com/512/2966/2966486.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 250px;
+            background-color: #f2f2f2;
+        }
 
-    <!-- AGE -->
-    <label>Age:</label>
-    <input type="number" name="Age" required>
+        .main{
+            width: 700px;
+            margin: auto;
+            margin-top: 40px;
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    <br><br>
+        h1{
+            text-align: center;
+            font-style: italic;
+            text-decoration: underline;
+        }
 
-    <!-- DURATION -->
-    <label>Duration:</label>
-    <input type="number" name="Duration" required>
+        h2{
+            text-align: center;
+        }
 
-    <br><br>
+        .age-box{
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    <!-- FREQUENCY -->
-    <label>Frequency:</label>
-    <input type="number" name="Frequency" required>
+        .age-box input{
+            width: 120px;
+            height: 28px;
+        }
 
-    <br><br>
+        .form-container{
+            display: flex;
+            justify-content: space-between;
+        }
 
-    <!-- LOCATION -->
-    <label>Location:</label>
-    <input type="number" name="Location" required>
+        .column{
+            width: 45%;
+        }
 
-    <br><br>
+        .field{
+            margin-bottom: 10px;
+        }
 
-    <!-- CHARACTER -->
-    <label>Character:</label>
-    <input type="number" name="Character" required>
+        .field label{
+            display: inline-block;
+            width: 120px;
+        }
 
-    <br><br>
+        .field input{
+            width: 120px;
+            height: 25px;
+        }
 
-    <!-- INTENSITY -->
-    <label>Intensity:</label>
-    <input type="number" name="Intensity" required>
+        .btn{
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    <br><br>
+        button{
+            background-color: black;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    <!-- NAUSEA -->
-    <label>Nausea:</label>
-    <input type="number" name="Nausea" required>
+    </style>
+</head>
 
-    <br><br>
+<body>
 
-    <!-- VOMIT -->
-    <label>Vomit:</label>
-    <input type="number" name="Vomit" required>
+<div class="main">
 
-    <br><br>
+    <h1>"MIGRAINE CLASSIFICATION"</h1>
 
-    <!-- PHONOPHOBIA -->
-    <label>Phonophobia:</label>
-    <input type="number" name="Phonophobia" required>
+    <h2>[Personal Information]</h2>
 
-    <br><br>
+    <form method="POST">
 
-    <!-- PHOTOPHOBIA -->
-    <label>Photophobia:</label>
-    <input type="number" name="Photophobia" required>
+        {% csrf_token %}
 
-    <br><br>
+        <div class="age-box">
+            <label>Age :</label>
+            <input type="number" name="Age" required>
+        </div>
 
-    <!-- VISUAL -->
-    <label>Visual:</label>
-    <input type="number" name="Visual" required>
+        <h2>[Medical Information]</h2>
 
-    <br><br>
+        <div class="form-container">
 
-    <!-- SENSORY -->
-    <label>Sensory:</label>
-    <input type="number" name="Sensory" required>
+            <!-- LEFT COLUMN -->
+            <div class="column">
 
-    <br><br>
+                <div class="field">
+                    <label>Duration</label>
+                    <input type="number" name="Duration" required>
+                </div>
 
-    <!-- DYSPHASIA -->
-    <label>Dysphasia:</label>
-    <input type="number" name="Dysphasia" required>
+                <div class="field">
+                    <label>Location</label>
+                    <input type="number" name="Location" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Intensity</label>
+                    <input type="number" name="Intensity" required>
+                </div>
 
-    <!-- DYSARTHRIA -->
-    <label>Dysarthria:</label>
-    <input type="number" name="Dysarthria" required>
+                <div class="field">
+                    <label>Vomit</label>
+                    <input type="number" name="Vomit" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Photophobia</label>
+                    <input type="number" name="Photophobia" required>
+                </div>
 
-    <!-- VERTIGO -->
-    <label>Vertigo:</label>
-    <input type="number" name="Vertigo" required>
+                <div class="field">
+                    <label>Sensory</label>
+                    <input type="number" name="Sensory" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Dysarthria</label>
+                    <input type="number" name="Dysarthria" required>
+                </div>
 
-    <!-- TINNITUS -->
-    <label>Tinnitus:</label>
-    <input type="number" name="Tinnitus" required>
+                <div class="field">
+                    <label>Tinnitus</label>
+                    <input type="number" name="Tinnitus" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Diplopia</label>
+                    <input type="number" name="Diplopia" required>
+                </div>
 
-    <!-- HYPOACUSIS -->
-    <label>Hypoacusis:</label>
-    <input type="number" name="Hypoacusis" required>
+                <div class="field">
+                    <label>Ataxia</label>
+                    <input type="number" name="Ataxia" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Paresthesia</label>
+                    <input type="number" name="Paresthesia" required>
+                </div>
 
-    <!-- DIPLOPIA -->
-    <label>Diplopia:</label>
-    <input type="number" name="Diplopia" required>
+            </div>
 
-    <br><br>
+            <!-- RIGHT COLUMN -->
+            <div class="column">
 
-    <!-- DEFECT -->
-    <label>Defect:</label>
-    <input type="number" name="Defect" required>
+                <div class="field">
+                    <label>Frequency</label>
+                    <input type="number" name="Frequency" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Character</label>
+                    <input type="number" name="Character" required>
+                </div>
 
-    <!-- ATAXIA -->
-    <label>Ataxia:</label>
-    <input type="number" name="Ataxia" required>
+                <div class="field">
+                    <label>Nausea</label>
+                    <input type="number" name="Nausea" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Phonophobia</label>
+                    <input type="number" name="Phonophobia" required>
+                </div>
 
-    <!-- CONSCIENCE -->
-    <label>Conscience:</label>
-    <input type="number" name="Conscience" required>
+                <div class="field">
+                    <label>Visual</label>
+                    <input type="number" name="Visual" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Dysphasia</label>
+                    <input type="number" name="Dysphasia" required>
+                </div>
 
-    <!-- PARESTHESIA -->
-    <label>Paresthesia:</label>
-    <input type="number" name="Paresthesia" required>
+                <div class="field">
+                    <label>Vertigo</label>
+                    <input type="number" name="Vertigo" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Hypoacusis</label>
+                    <input type="number" name="Hypoacusis" required>
+                </div>
 
-    <!-- DPF -->
-    <label>DPF:</label>
-    <input type="number" name="DPF" required>
+                <div class="field">
+                    <label>Defect</label>
+                    <input type="number" name="Defect" required>
+                </div>
 
-    <br><br>
+                <div class="field">
+                    <label>Conscience</label>
+                    <input type="number" name="Conscience" required>
+                </div>
 
-    <button type="submit">Predict</button>
+                <div class="field">
+                    <label>DPF</label>
+                    <input type="number" name="DPF" required>
+                </div>
 
-</form>
+            </div>
+
+        </div>
+
+        <div class="btn">
+            <button type="submit">Predict</button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
